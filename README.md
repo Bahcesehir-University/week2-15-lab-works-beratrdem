@@ -1,145 +1,115 @@
-# IST1012 – Computer Programming II
-## 2025–2026 Spring Semester
+# IST1012 Lab — Recursion in Python
 
-This repository contains the **weekly laboratory work** for the course:
+## 1. Lab Title
 
-**IST1012 – Computer Programming II (Python)**  
-Department of Information Security Technologies
-Bahcesehir University
+**Recursion in Python: From Basics to Cybersecurity Applications**
 
----
+## 2. Objective of the Lab
 
-# Course Information
+This lab introduces recursion as a programming technique and connects it to real-world cybersecurity scenarios. Students will learn to identify base cases and recursive cases, trace call stacks, and implement recursive solutions for string manipulation, exponentiation (relevant to cryptography), brute-force password generation, and file system scanning.
 
-Course: IST1012 – Computer Programming II  
-Language: Python
-TA : Ismail Taha Samed ÖZKAN
+## 3. Prerequisites
 
-This course focuses on developing practical programming skills using Python.  
----
+Before starting this lab, students should be comfortable with:
 
-# Repository Structure
+- Writing and calling Python functions (`def`, `return`)
+- Basic data types: strings, lists, integers
+- Conditional statements (`if` / `else`)
+- Running code in a Jupyter Notebook environment
 
-Each week has its own folder.
+No prior knowledge of recursion is required.
 
-```
-├── week01_intro
-├── week02_lists_sets
-├── week03_dictionaries
-├── week04_oop
-├── week05_oop
-├── week06_review
-├── week07_exam_prep
-├── week08_midterm
-├── week09_inheritance
-├── week10_recursion
-├── week11_gui
-├── week12_gui
-├── week13_files
-├── week14_case_study
-└── week15_final
-```
+## 4. What Students Will Learn
 
-Each folder will contain a Jupyter notebook:
+| Objective | Exercise |
+|-----------|----------|
+| Define recursion and identify base/recursive cases | Warm-Up + Core Concepts |
+| Trace recursive execution on the call stack | Core Concepts (factorial walkthrough) |
+| Implement recursive functions for cybersecurity problems | Exercises 1–3 |
+| Apply recursion to nested data structures | Challenge (directory scanner) |
 
-```
-lab.ipynb
-```
+## 5. Lab Structure
 
-Students must complete the exercises inside the notebook.
+The lab is divided into four parts designed to fit within a 60-minute session:
 
----
+| Part | Section | Duration | Description |
+|------|---------|----------|-------------|
+| 1 | Warm-Up | 5–10 min | Conceptual questions and a small code trace |
+| 2 | Core Concepts | 10–15 min | Short explanations with code examples (factorial, list sum) |
+| 3 | Guided Exercises (×3) | 25–30 min | Hands-on coding with increasing difficulty |
+| 4 | Challenge | 10 min | Optional advanced problem (recursive directory scanner) |
 
-# Weekly Workflow
+## 6. Instructions — How to Run the Notebook
 
-Each week you should follow this workflow:
+### Option A: Local (Anaconda / Jupyter)
 
-1. Pull the latest version of the repository
-2. Open the week's lab notebook
-3. Complete all exercises
-4. Commit your work
-5. Push your changes to GitHub
+```bash
+# 1. Make sure Jupyter is installed
+pip install notebook
 
-Example:
+# 2. Navigate to the lab folder
+cd path/to/lab/
 
-```
-git add .
-git commit -m "Week02 lab completed"
-git push
+# 3. Launch Jupyter
+jupyter notebook IST1012_Recursion_Lab_Student.ipynb
 ```
 
-Make sure your work is pushed to GitHub before the deadline.
+### Option B: Google Colab
 
----
+1. Go to [colab.research.google.com](https://colab.research.google.com)
+2. Click **File → Upload notebook**
+3. Upload `IST1012_Recursion_Lab_Student.ipynb`
+4. Work through the cells from top to bottom
 
-# Important Rules
+### Option C: GitHub Classroom (if configured)
 
-Students **must not**:
+1. Accept the assignment link provided by your instructor.
+2. Clone the repository to your machine or open it in the cloud IDE.
+3. Complete the notebook and push your changes before the deadline.
 
-- Rename folders
-- Move files to different directories
-- Delete provided files
+## 7. Submission Guidelines
 
-Changing the repository structure may result in submission or grading issues.
+1. Complete all exercises directly in the notebook (replace every `pass` with your code).
+2. Run all cells to make sure there are no errors.
+3. **Save** the notebook (`Ctrl+S` / `Cmd+S`).
+4. Submit the `.ipynb` file through the course LMS (Canvas / Blackboard / GitHub Classroom) by the posted deadline.
+5. Late submissions follow the policy stated in the syllabus.
 
----
+## 8. Grading Criteria
 
-# Academic Integrity
+| Component | Points | Criteria |
+|-----------|--------|----------|
+| Exercise 1 — String Reversal | 30 | Correct recursive implementation; handles empty and single-char strings |
+| Exercise 2 — Power Function | 30 | Correct recursive implementation; handles `exp = 0` and `exp = 1` |
+| Exercise 3 — Password Generator | 30 | Returns all combinations; correct base case; no use of `itertools` |
+| Challenge — Directory Scanner | 10 (bonus) | Correctly traverses nested dicts; filters by extension |
+| **Total** | **100** | |
 
-All submitted work must be **your own**.
+**Deductions:**
+- Using loops instead of recursion for the core logic: −50% on that exercise
+- Using forbidden built-ins (`[::-1]`, `**`, `pow`, `itertools`): −50% on that exercise
+- Code does not run (syntax errors): −100% on that exercise
 
-Allowed:
-
-- Discussing concepts with classmates
-- Asking questions during lab sessions
-
-Not allowed:
-
-- Copying code from other students
-- Sharing your solution files
-- Submitting work you do not understand
-
-Violations will be handled according to university academic integrity policies.
-
----
-
-# Required Software
-
-Students should install the following tools:
-
-- Python 3.10 or newer
-- Jupyter Notebook or JupyterLab
-- Git
-- Visual Studio Code (recommended)
-
----
-
-# Running the Notebooks
-
-To start Jupyter Notebook run:
+## 9. Estimated Time Breakdown
 
 ```
-jupyter notebook
+ 0:00 – 0:10   Part 1: Warm-Up
+ 0:10 – 0:25   Part 2: Core Concepts (read, run examples)
+ 0:25 – 0:35   Exercise 1: Recursive String Reversal
+ 0:35 – 0:45   Exercise 2: Recursive Power Function
+ 0:45 – 0:55   Exercise 3: Recursive Password Generator
+ 0:55 – 1:00   Challenge (bonus) + Wrap-Up
 ```
 
-Then open the appropriate week's folder and launch `lab.ipynb`.
+## 10. Tips for Students
+
+- **Start with the base case.** Ask yourself: "What is the simplest input where I already know the answer?" That is your base case.
+- **Trust the recursion.** Assume the recursive call works correctly for a smaller input. Your job is only to handle the current step.
+- **Trace by hand.** If your code is not working, write out the calls on paper for a small input (e.g., `n = 3`). This almost always reveals the bug.
+- **Test incrementally.** Run your function with the simplest test case first before trying complex inputs.
+- **Do not be afraid of `RecursionError`.** It just means you are missing a base case or not making the problem smaller. Fix the base case and try again.
+- **Ask for help early.** If you are stuck for more than 5 minutes on one exercise, raise your hand or post in the course chat.
 
 ---
 
-# Getting Help
-
-If you encounter issues with:
-
-- Git
-- Python
-- Jupyter
-
-please ask during the lab session.
-
----
-
-# Good Luck
-
-Programming skills improve with practice.
-
-Write the code yourself, experiment, and try to understand how your
+*IST1012 — Computer Programming II | Lab: Recursion*
